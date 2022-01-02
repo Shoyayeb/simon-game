@@ -5,13 +5,18 @@ var yellow = new Audio("./sounds/yellow.mp3");
 var wrong = new Audio("./sounds/wrong.mp3");
 
 
-const playAudio = (fileName) => {
-    fileName.play()
+const playAudio = (file) => {
+    file.play();
+}
+const wrongClick = () => {
+    playAudio(wrong)
 }
 const btnClick = (btnColor) => {
-    console.log(`${btnColor.id}Audio`);
-    playAudio(btnColor.id)
+    playAudio(btnColor)
+}
 
+document.onkeypress = () => {
+    document.getElementById("level-title").innerText("hi")
 }
 // playAudio(blue)
 // document.getElementById("blue").addEventListener("click", playAudio);
